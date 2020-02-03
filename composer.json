@@ -1,5 +1,5 @@
 {
-    "name": "woosignal/lara-app-dev",
+    "name": "woosignal/laravel-laraapp",
     "description": "LaraApp for IOS and Android, manage your Laravel project on the move.",
     "type": "library",
     "keywords": [
@@ -9,7 +9,7 @@
         "Laravel IOS app",
         "Laravel Android app"
     ],
-    "homepage": "https://github.com/woosignal/lara-app-dev",
+    "homepage": "https://github.com/woosignal/laravel-laraapp",
     "license": "MIT",
     "authors": [
         {
