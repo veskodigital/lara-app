@@ -1,0 +1,62 @@
+{
+    "name": "woosignal/lara-app-dev",
+    "description": "LaraApp for IOS and Android, manage your Laravel project on the move.",
+    "type": "library",
+    "keywords": [
+        "Laravel App",
+        "LaraApp",
+        "Laravel",
+        "Laravel IOS app",
+        "Laravel Android app"
+    ],
+    "homepage": "https://github.com/woosignal/lara-app-dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthony Gordon",
+            "email": "agordon@woosignal.com",
+            "homepage": "https://woosignal.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "chillerlan/php-qrcode": "^3.1",
+        "illuminate/support": "~5.8.0|^6.0",
+        "nesbot/carbon": "^1.21|^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.8.0|^4.0",
+        "phpunit/phpunit": "^8.0",
+        "php": "^7.2",
+        "chillerlan/php-qrcode": "^3.1",
+        "illuminate/support": "~5.8.0|^6.0",
+        "nesbot/carbon": "^1.21|^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WooSignal\\LaraApp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WooSignal\\LaraApp\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WooSignal\\LaraApp\\LaraAppServiceProvider"
+            ],
+            "aliases": {
+                "LaraApp": "WooSignal\\LaraApp\\LaraApp"
+            }
+        }
+    }
+}

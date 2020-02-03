@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Gate;
+use WooSignal\LaraApp\LaraAppApplicationServiceProvider;
+
+class LaraAppServiceProvider extends LaraAppApplicationServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        parent::boot();
+    }
+
+    /**
+     * Register the LaraApp gate.
+     *
+     * This gate determines who can access LaraApp in non-local environments.
+     *
+     * @return void
+     */
+    protected function gate()
+    {
+        Gate::define('viewLaraApp', function ($user) {
+            return in_array($user->email, [
+                //
+            ]);
+        });
+    }
+}
