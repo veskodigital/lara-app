@@ -11,8 +11,8 @@ Our package enables you to manage your project on the go, some features include:
 * Charts for users signed up
 * Run artisan commands
 
+[IOS App](https://apps.apple.com/us/app/laraapp-for-laravel-artisans/id1489590015)
 <br>
-[IOS App](https://apps.apple.com/us/app/laraapp-for-laravel-artisans/id1489590015) | 
 [Android App](https://play.google.com/store/apps/details?id=com.mavsoft.LaraApp)
 
 <br>
