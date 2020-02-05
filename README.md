@@ -15,7 +15,6 @@ Our package enables you to manage your project on the go, some features include:
 <br>
 [Android App](https://play.google.com/store/apps/details?id=com.mavsoft.LaraApp)
 
-<br>
 Download the IOS/Android app for free and link your Laravel project, follow the installtion below once you have the app.
 
 ## Installation
