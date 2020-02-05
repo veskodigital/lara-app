@@ -60,7 +60,7 @@ class InstallCommand extends Command
 
             if ($this->confirm('Would you also like to run the migration now too?')) {
                 $this->comment('Running LaraApp migration...');
-                $this->call('migrate', ['--path' => 'vendor/woosignal/lara-app-dev/src/database/migrations']);
+                $this->call('migrate', ['--path' => 'vendor/woosignal/laravel-laraapp/src/database/migrations']);
 
                 if (Schema::hasTable('la_app_users')) {
                     $userDefault = LaraAppUser::where('email', '=', 'me@lara.app')->first();

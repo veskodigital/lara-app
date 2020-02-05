@@ -1,6 +1,6 @@
 {
     "name": "woosignal/laravel-laraapp",
-    "description": "LaraApp for IOS and Android, manage your Laravel project on the move.",
+    "description": "LaraApp for Laravel, manage your Laravel project on the move. Available on IOS and Android.",
     "type": "library",
     "keywords": [
         "Laravel App",
