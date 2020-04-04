@@ -3,7 +3,7 @@
 namespace WooSignal\LaraApp\Http\Controllers;
 
 use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Models\Http\Requests\LoginRequest;
+use WooSignal\LaraApp\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use WooSignal\LaraApp\Models\LaraAppUser;
 use Hash;

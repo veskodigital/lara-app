@@ -5,8 +5,8 @@ namespace WooSignal\LaraApp\Http\Controllers;
 use Symfony\Component\Console\Exception\RuntimeException;
 use WooSignal\LaraApp\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use WooSignal\LaraApp\Models\Http\Requests\PushTokenRequest;
-use WooSignal\LaraApp\Models\Http\Requests\PushNotificationsUpdateRequest;
+use WooSignal\LaraApp\Http\Requests\PushTokenRequest;
+use WooSignal\LaraApp\Http\Requests\PushNotificationsUpdateRequest;
 use Artisan;
 use File;
 
