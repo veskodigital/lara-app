@@ -1,6 +1,10 @@
 # Changelog
 
+## 2.0.4 - 2020-04-04
+
 All tagged releases to `laravel-laraapp` will be documented in this file
+
+- added trait missing from Laravel 7
 
 ## 2.0.3 - 2020-04-04
 
