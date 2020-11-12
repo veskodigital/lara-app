@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 - 2020-11-12
+
+Laravel 8 update
+
 ## 2.0.4 - 2020-04-04
 
 All tagged releases to `laravel-laraapp` will be documented in this file

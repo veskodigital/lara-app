@@ -21,17 +21,17 @@
     ],
     "require": {
         "php": "^7.2",
-        "chillerlan/php-qrcode": "^3.1",
-        "illuminate/support": "~5.8.0|6.x|7.x",
-        "nesbot/carbon": "^1.21|^2.0"
+        "chillerlan/php-qrcode": "^3.x",
+        "illuminate/support": "~5.8.0|6.x|7.x|8.x",
+        "nesbot/carbon": "^1.21|^2.x"
     },
     "require-dev": {
         "orchestra/testbench": "~3.8.0|^4.0",
         "phpunit/phpunit": "^8.0",
         "php": "^7.2",
-        "chillerlan/php-qrcode": "^3.1",
-        "illuminate/support": "~5.8.0|6.0|7.x",
-        "nesbot/carbon": "^1.21|^2.0"
+        "chillerlan/php-qrcode": "^3.x",
+        "illuminate/support": "~5.8.0|6.x|7.x|8.x",
+        "nesbot/carbon": "^1.21|^2.x"
     },
     "autoload": {
         "psr-4": {

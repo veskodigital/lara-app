@@ -67,7 +67,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | LaraApp App name
+    | LaraApp App Name
     |--------------------------------------------------------------------------
     |
     | This is the name which will be displayed in the app
@@ -79,11 +79,10 @@ return [
 
      /*
     |--------------------------------------------------------------------------
-    | LaraApp Key
+    | LaraApp App Key
     |--------------------------------------------------------------------------
     |
     | Here you can set the application app key from https://thelara.app/
-    | You will be able to get this if you upgrade to yearlong Plan
     |
     */
 
@@ -106,7 +105,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | LaraApp Default
+    | LaraApp Logging
     |--------------------------------------------------------------------------
     |
     | If default is set to stack, single or daily then the app will be able to return the logs.
