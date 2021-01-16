@@ -2,9 +2,9 @@
 
 namespace WooSignal\LaraApp\Http\Middleware;
 
-use WooSignal\LaravelFCM\Models\LaraAppUser;
-use WooSignal\LaravelFCM\Models\LaUserDevice;
-use WooSignal\LaravelFCM\Models\LaAppRequest;
+use WooSignal\LaraApp\Models\LaraAppUser;
+use WooSignal\LaraApp\Models\LaUserDevice;
+use WooSignal\LaraApp\Models\LaAppRequest;
 
 class APIAuthenticate
 {

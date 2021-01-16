@@ -3,8 +3,8 @@
 namespace WooSignal\LaraApp\Console;
 
 use Illuminate\Console\Command;
-use WooSignal\LaravelFCM\Console\Traits\DetectsApplicationNamespace;
-use WooSignal\LaravelFCM\Models\LaraAppUser;
+use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
+use WooSignal\LaraApp\Models\LaraAppUser;
 use Hash;
 
 class UpdateUserCommand extends Command

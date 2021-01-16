@@ -1,14 +1,15 @@
 {
-    "name": "woosignal/laravel-fcm-notify",
-    "description": "Send notifications from Firebase cloud messenger from Laravel.",
+    "name": "woosignal/laravel-laraapp",
+    "description": "LaraApp for Laravel, manage your Laravel project on the move. Available on IOS and Android.",
     "type": "library",
     "keywords": [
-        "Laravel FCM",
-        "Firebase Cloud Messenger Laravel",
-        "FCM notifications",
-        "Laravel notify"
+        "Laravel App",
+        "LaraApp",
+        "Laravel",
+        "Laravel IOS app",
+        "Laravel Android app"
     ],
-    "homepage": "https://github.com/woosignal/laravel-fcm-notify",
+    "homepage": "https://github.com/woosignal/laravel-laraapp",
     "license": "MIT",
     "authors": [
         {
@@ -20,8 +21,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "sngrl/php-firebase-cloud-messaging": "dev-master",
-        "kreait/firebase-php": "^5.8",
+        "chillerlan/php-qrcode": "^3.1",
         "illuminate/support": "~5.8.0|6.x|7.x|8.x",
         "nesbot/carbon": "^1.21|^2.0"
     },
@@ -29,17 +29,18 @@
         "orchestra/testbench": "~3.8.0|^4.0",
         "phpunit/phpunit": "^8.0",
         "php": "^7.2",
+        "chillerlan/php-qrcode": "^3.1",
         "illuminate/support": "~5.8.0|6.x|7.x|8.x",
         "nesbot/carbon": "^1.21|^2.0"
     },
     "autoload": {
         "psr-4": {
-            "WooSignal\\LaravelFCM\\": "src/"
+            "WooSignal\\LaraApp\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WooSignal\\LaravelFCM\\Test\\": "tests"
+            "WooSignal\\LaraApp\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -51,10 +52,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WooSignal\\LaravelFCM\\LaraAppServiceProvider"
+                "WooSignal\\LaraApp\\LaraAppServiceProvider"
             ],
             "aliases": {
-                "LaraApp": "WooSignal\\LaravelFCM\\LaravelFCM"
+                "LaraApp": "WooSignal\\LaraApp\\LaraApp"
             }
         }
     }
