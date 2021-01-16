@@ -22,7 +22,7 @@ Download the IOS/Android app for free and link your Laravel project, follow the 
 First, install the package via composer:
 
 ``` bash
-composer require woosignal/laravel-laraapp
+composer require woosignal/laravel-laraapp v3.0.1
 ```
 
 The package will automatically register itself.
