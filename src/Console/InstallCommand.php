@@ -4,9 +4,9 @@ namespace WooSignal\LaraApp\Console;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
+use WooSignal\LaravelFCM\Console\Traits\DetectsApplicationNamespace;
 use Illuminate\Support\Facades\Schema;
-use WooSignal\LaraApp\Models\LaraAppUser;
+use WooSignal\LaravelFCM\Models\LaraAppUser;
 use Hash;
 
 class InstallCommand extends Command

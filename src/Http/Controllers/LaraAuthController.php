@@ -2,10 +2,10 @@
 
 namespace WooSignal\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Http\Requests\LoginRequest;
+use WooSignal\LaravelFCM\Http\Controllers\Controller;
+use WooSignal\LaravelFCM\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
-use WooSignal\LaraApp\Models\LaraAppUser;
+use WooSignal\LaravelFCM\Models\LaraAppUser;
 use Hash;
 
 class LaraAuthController extends Controller

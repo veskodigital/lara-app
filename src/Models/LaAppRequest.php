@@ -15,7 +15,7 @@ class LaAppRequest extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-		'device_id','request_type','ip'
+		'device_id', 'request_type', 'ip'
 	];
 
 	public function device()

@@ -2,8 +2,8 @@
 
 namespace WooSignal\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Http\Middleware\Authenticate;
+use WooSignal\LaravelFCM\Http\Controllers\Controller;
+use WooSignal\LaravelFCM\Http\Middleware\Authenticate;
 use Illuminate\Http\Request;
 
 class LaraAppController extends Controller

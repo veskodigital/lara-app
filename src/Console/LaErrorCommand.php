@@ -4,8 +4,8 @@ namespace WooSignal\LaraApp\Console;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
-use WooSignal\LaraApp\Models\LaUserDevice;
+use WooSignal\LaravelFCM\Console\Traits\DetectsApplicationNamespace;
+use WooSignal\LaravelFCM\Models\LaUserDevice;
 
 class LaErrorCommand extends Command
 {

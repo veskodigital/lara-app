@@ -2,7 +2,7 @@
 
 namespace WooSignal\LaraApp\Http\Middleware;
 
-use WooSignal\LaraApp\LaraApp;
+use WooSignal\LaravelFCM\LaraApp;
 
 class Authenticate
 {
