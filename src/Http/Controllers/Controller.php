@@ -2,7 +2,6 @@
 
 namespace WooSignal\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Middleware\Authenticate;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -14,6 +13,6 @@ class Controller extends BaseController
      */
     public function __construct()
     {
-        
+
     }
 }

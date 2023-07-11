@@ -2,7 +2,6 @@
 
 namespace WooSignal\LaraApp\Http\Middleware;
 
-use WooSignal\LaraApp\Models\LaraAppUser;
 use WooSignal\LaraApp\Models\LaUserDevice;
 use WooSignal\LaraApp\Models\LaAppRequest;
 
@@ -17,44 +16,53 @@ class APIAuthenticate
      */
     public function handle($request, $next)
     {
-        $token = $request->bearerToken();
-        $laUser = LaraAppUser::where('app_token', '=', $token)->where('is_active', 1)->first();
+        $dmeta = $request->header('X-DMETA');
+        $dmeta = json_decode($dmeta, true);
 
-        if (!is_null($laUser)) {
-            $dmeta = $request->header('X-DMETA');
-            $dmeta = json_decode($dmeta, true);
-            $pushToken = '';
-            if (isset($dmeta['push_token'])) {
-                $pushToken = $dmeta['push_token'];
-            }
-            $device = LaUserDevice::updateOrCreate(
-                [
-                    'uuid' => $dmeta['uuid'],
-                    'push_token' => $pushToken,
-                ],
-                [
-                    'la_user_id' => $laUser->id,
-                    'name' => $dmeta['model'],
-                    'version' => $dmeta['version'],
-                    'push_token' => $pushToken,
-                    'push_settings' => json_encode(['newUsers' => true, 'errors' => true]),
-                    'is_active' => 1,
-                    'display_name' => $dmeta['brand'],
-                    'uuid' => $dmeta['uuid']
-                ]
-            );
-
-            if (!is_null($device)) {
-                $laAppRequest = LaAppRequest::create([
-                    'device_id' => $device->id,
-                    'request_type' => 'app_request',
-                    'ip' => $request->ip(),
-                ]); 
-            }
-            $request->request->add(['udevice' => $device]);
-            return $next($request);
+        $pushToken = '';
+        if (isset($dmeta['push_token'])) {
+            $pushToken = $dmeta['push_token'];
         }
 
-        return abort(403);
+        $user = $request->user();
+        $device = LaUserDevice::updateOrCreate(
+            [
+                'uuid' => $dmeta['uuid']
+            ],
+            [
+                'la_user_id' => $user->id,
+                'name' => $dmeta['model'],
+                'version' => $dmeta['version'],
+                'push_token' => $pushToken,
+                'display_name' => $dmeta['brand'],
+                'uuid' => $dmeta['uuid']
+            ]
+        );
+
+        if ($device->wasRecentlyCreated) {
+            $device->update([
+                'push_settings' => json_encode([
+                    'observer_created_user' => true,
+                    'yesterday_user_created_count' => true,
+                    'weekly_user_created_count' => true,
+                    'monthly_user_created_count' => true
+                ]),
+                'is_active' => 1,
+            ]);
+        }
+
+        if (empty($device)) {
+            return abort(403, 'Unable to create device');
+        }
+
+        $laAppRequest = LaAppRequest::create([
+            'la_user_device_id' => $device->id,
+            'request_type' => $request->getRequestUri(),
+            'ip' => $request->ip(),
+        ]); 
+
+        $request->request->add(['udevice' => $device, 'app_request' => $laAppRequest]);
+        
+        return $next($request);
     }
 }

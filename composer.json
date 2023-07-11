@@ -20,18 +20,13 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "chillerlan/php-qrcode": "^3.1",
-        "illuminate/support": "~5.8.0|6.x|7.x|8.x",
+        "php": "^8.1",
+        "chillerlan/php-qrcode": "^4.3.4",
+        "illuminate/support": "~5.8.0|6.x|7.x|8.x|9.x|10.x",
         "nesbot/carbon": "^1.21|^2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8.0|^4.0",
-        "phpunit/phpunit": "^8.0",
-        "php": "^7.2",
-        "chillerlan/php-qrcode": "^3.1",
-        "illuminate/support": "~5.8.0|6.x|7.x|8.x",
-        "nesbot/carbon": "^1.21|^2.0"
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {

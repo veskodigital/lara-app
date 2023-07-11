@@ -14,9 +14,8 @@ class CreateLaAppRequestsTable extends Migration
     public function up()
     {
         Schema::create('la_app_requests', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('device_id')->index();
-            $table->foreign('device_id')->references('id')->on('la_user_devices');
+            $table->id();
+            $table->foreignIdFor(\WooSignal\LaraApp\Models\LaUserDevice::class)->constrained();
             $table->string('request_type');
             $table->string('ip');
             $table->timestamps();

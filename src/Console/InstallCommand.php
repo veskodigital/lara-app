@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
 use Illuminate\Support\Facades\Schema;
-use WooSignal\LaraApp\Models\LaraAppUser;
+use WooSignal\LaraApp\Models\LaUser;
 use Hash;
 
 class InstallCommand extends Command
@@ -44,34 +44,30 @@ class InstallCommand extends Command
 
         $this->info('LaraApp scaffolding installed successfully.');
 
+        $tablesRequired = ['la_users', 'la_user_devices', 'la_app_requests'];
         $arrTablesMissing = [];
-        if (!Schema::hasTable('la_app_users')) {
-            $arrTablesMissing[] = 'la_app_users';
+        foreach ($tablesRequired as $missingTable) {
+            if (!Schema::hasTable($missingTable)) {
+                $arrTablesMissing[] = $missingTable;
+            }    
         }
-        if (!Schema::hasTable('la_user_devices')) {
-            $arrTablesMissing[] = 'la_user_devices';
-        }
-        if (!Schema::hasTable('la_app_requests')) {
-            $arrTablesMissing[] = 'la_app_requests';
-        }
-
+        
         if (count($arrTablesMissing) > 0) {
-            $this->comment('You are missing the tables ' . implode(",", $arrTablesMissing) . ' for LaraApp to work...');
+            $this->comment('You are missing the tables ' . implode(", ", $arrTablesMissing) . ' for LaraApp to work...');
 
             if ($this->confirm('Would you also like to run the migration now too?')) {
                 $this->comment('Running LaraApp migration...');
                 $this->call('migrate', ['--path' => 'vendor/woosignal/laravel-laraapp/src/database/migrations']);
+            }
+        }
 
-                if (Schema::hasTable('la_app_users')) {
-                    $userDefault = LaraAppUser::where('email', '=', 'me@lara.app')->first();
-                    if (is_null($userDefault)) {
-                        $userDefault = LaraAppUser::create([
-                            'email' => 'me@lara.app',
-                            'password' => Hash::make('app123')
-                        ]);
-                        $this->info("LaraApp user added to la_app_users\n\nemail: me@lara.app\npassword: app123\n");
-                    }
-                }
+        if (Schema::hasTable('la_users')) {
+            $userDefault = LaUser::updateOrCreate(
+                ['email' => 'me@lara.app'],
+                ['email' => 'me@lara.app', 'password' => Hash::make('app123')]
+            );
+            if (!empty($userDefault)) {
+                $this->info("LaraApp user added to la_users\n\nemail: me@lara.app\npassword: app123\n");
             }
         }
     }

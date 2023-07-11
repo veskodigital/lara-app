@@ -4,7 +4,7 @@ namespace WooSignal\LaraApp\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PushNotificationsUpdateRequest extends FormRequest
+class UserSnapRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class PushNotificationsUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'push_settings' => 'required'
+            'when' => 'required|in:yesterday,weekly,monthly'
         ];
     }
 }

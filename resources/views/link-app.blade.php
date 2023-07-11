@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
 	<title>Link LaraApp via the QR code</title>
 
@@ -17,26 +17,24 @@
 		}
 	</style>
 </head>
-<body class="bg-faded d-flex vertical-center h-100">
+<body class="bg-faded d-flex vertical-center h-100 w-100">
 
-	<div class="container jumbotron text-center">
-		<div class="row border-bottom border-info">
+	<div class="h-100 jumbotron m-0 text-center w-100 align-self-center">
+		<div class="row border-bottom justify-content-center jumbotron">
 			<div class="col-md-12">
-				<h1 class="text-primary font-weight-bold"><span class="bg-light p-2 shadow-sm">Link LaraApp</span></h1>
+				<h1 class="text-danger font-weight-bold"><span class="border-bottom d-block p-2 w-100">Link LaraApp</span></h1>
 			</div>
 			<div class="col-md-12 py-4">
-				<img src="{{ (new \chillerlan\QRCode\QRCode)->render(config('app.url') . '/?' . http_build_query($payloadInfo)) }}" class="bg-white border" alt="QR Code" />
+				<img src="{{ (new \chillerlan\QRCode\QRCode)->render(json_encode($payloadInfo)) }}" class="bg-white border shadow rounded-lg" alt="QR Code" />
 			</div>
 			<div class="col-md-12">
 				<p class="text-secondary">Download the LaraApp app and link your phone to your Laravel app with the above code</p>
 			</div>
-		</div>
-		<div class="row justify-content-center mt-5">
 			<div class="col-md-3 text-center">
-				<a href="https://apps.apple.com/us/app/laraapp-for-laravel-artisans/id1489590015" title="LaraApp ios app" target="_BLANK">IOS - LaraApp</a>
+				<a class="text-danger" href="https://apps.apple.com/us/app/laraapp-for-laravel-artisans/id1489590015" title="LaraApp ios app" target="_BLANK">IOS - LaraApp</a>
 			</div>
 			<div class="col-md-3 text-center">
-				<a href="https://play.google.com/store/apps/details?id=com.mavsoft.laraapp" title="LaraApp android app" target="_BLANK">Android - LaraApp</a>
+				<a class="text-danger" href="https://play.google.com/store/apps/details?id=com.mavsoft.laraapp" title="LaraApp android app" target="_BLANK">Android - LaraApp</a>
 			</div>
 		</div>
 	</div>

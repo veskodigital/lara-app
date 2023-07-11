@@ -3,7 +3,6 @@
 namespace WooSignal\LaraApp;
 
 use Closure;
-use Exception;
 
 class LaraApp
 {

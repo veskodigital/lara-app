@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) WooSignal <support@woosignal.com>
+Copyright (c) WooSignal <hello@veskodigital.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -14,15 +14,15 @@ class CreateLaUserDevicesTable extends Migration
     public function up()
     {
         Schema::create('la_user_devices', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('la_user_id')->index();
-            $table->foreign('la_user_id')->references('id')->on('la_app_users');
+            $table->id();
+            $table->foreignIdFor(\WooSignal\LaraApp\Models\LaUser::class)->constrained();
             $table->text('uuid');
             $table->string('name');
             $table->string('display_name');
             $table->string('version');
+            $table->string('app_version')->nullable();
             $table->text('push_token')->nullable();
-            $table->json('push_settings');
+            $table->json('push_settings')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });

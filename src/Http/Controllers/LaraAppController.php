@@ -21,11 +21,14 @@ class LaraAppController extends Controller
      */
     public function index(Request $request)
     {
+        $url = $request->getSchemeAndHttpHost();
+        $url = config('app.url');
+        
         $payloadInfo = [
-            'name' => config('laraapp.app_name', 'Laravel App'),
-            'url' => $request->getSchemeAndHttpHost(),
+            'name' => config('app.name', 'Laravel App'),
+            'url' => $url,
             'path' => config('laraapp.path', 'lara-app'),
-            'login' => $request->getSchemeAndHttpHost() . '/' . config('laraapp.path', 'lara-app') . '/auth/login',
+            'login' => $url . '/' . config('laraapp.path', 'lara-app') . '/auth/login',
         ];
 
         return view('lara-app::link-app', compact('payloadInfo'));

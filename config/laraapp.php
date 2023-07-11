@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'user' => App\User::class,
+    'user' => App\Models\User::class,
 
 
      /*
@@ -50,7 +50,10 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => [
+        'throttle:api',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
 
 
     /*
@@ -64,18 +67,6 @@ return [
     */
 
     'storage_path' => 'storage/logs',
-
-    /*
-    |--------------------------------------------------------------------------
-    | LaraApp App Name
-    |--------------------------------------------------------------------------
-    |
-    | This is the name which will be displayed in the app
-    | By default this is set to your ENV APP_NAME
-    |
-    */
-
-    'app_name' => env('APP_NAME', 'Laravel App'),
 
      /*
     |--------------------------------------------------------------------------
@@ -99,8 +90,7 @@ return [
     */
 
     'observer' => [
-        'should_observe' => true,
-        'newUsers' => true, // When created gets called on the observer model
+        'observer_created_user' => true,
     ],
 
     /*

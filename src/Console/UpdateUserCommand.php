@@ -4,7 +4,7 @@ namespace WooSignal\LaraApp\Console;
 
 use Illuminate\Console\Command;
 use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
-use WooSignal\LaraApp\Models\LaraAppUser;
+use WooSignal\LaraApp\Models\LaUser;
 use Hash;
 
 class UpdateUserCommand extends Command
@@ -23,7 +23,7 @@ class UpdateUserCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Updates or creates a new user for LaraApp';
+    protected $description = 'Update or create a new user for LaraApp';
 
     /**
      * Execute the console command.
@@ -37,43 +37,43 @@ class UpdateUserCommand extends Command
 
         if (empty($email)) {
             $this->info('Email cannot be empty');
-            return;
+            return 1;
         }
 
         if (empty($password)) {
             $this->info('Password cannot be empty');
-            return;
+            return 1;
         }
 
-        $defaultUser = LaraAppUser::where('email', '=', 'me@thelara.app')->first();
+        $defaultUser = LaUser::where('email', 'me@thelara.app')
+                                    ->where('is_active', 1)
+                                    ->first();
         if (!is_null($defaultUser)) {
-            if ($defaultUser->is_active == 1) {
-                if ($this->confirm('Would you like to remove me@thelara.app user?')) {
-                    $defaultUser->update('is_active', 0);
-                }
+            if ($this->confirm('Would you like to remove me@thelara.app user?')) {
+                $defaultUser->update('is_active', 0);
             }
         }
 
         $this->comment('Generating hash for password...');
-        $hashPw = Hash::make($password);
 
-        $hadUser = LaraAppUser::where('email', $email)->first();
+        $userUpdateOrCreate = LaUser::updateOrCreate(
+            ['email' => $email],
+            [
+                'email' => $email,
+                'password' => Hash::make($password)
+            ]
+        );
 
-        $updatePw = LaraAppUser::updateOrCreate([
-            'email' => $email,
-        ],
-        [
-          'email' => $email,
-          'password' => $hashPw,
-          'app_token' => bin2hex(openssl_random_pseudo_bytes(20))  
-      ]);
-
-        if (is_null($hadUser) && $updatePw) {
-            $this->info("LaraApp created a new user.\nEmail: " . $email . "\nPassword: *******");
-        } else if (!is_null($hadUser) && $updatePw) {
+        if(!$userUpdateOrCreate->wasRecentlyCreated && $userUpdateOrCreate->wasChanged()) {
             $this->info("LaraApp updated user\nEmail: " . $email);
-        } else {
-            $this->info('Something went wrong, please try again.');
+            return 0;
         }
+
+        if($userUpdateOrCreate->wasRecentlyCreated) {
+            $this->info("LaraApp created a new user.\nEmail: " . $email . "\nPassword: *******");
+            return 0;
+        }
+
+        $this->info('Something went wrong, please try again.');
     }
 }
