@@ -1,5 +1,5 @@
 {
-    "name": "veskodigital/laravel-laraapp",
+    "name": "veskodigital/lara-app",
     "description": "LaraApp for Laravel, manage your Laravel project on the move. Available on IOS and Android.",
     "type": "library",
     "keywords": [
@@ -9,7 +9,7 @@
         "Laravel IOS app",
         "Laravel Android app"
     ],
-    "homepage": "https://github.com/veskodigital/laravel-laraapp",
+    "homepage": "https://github.com/veskodigital/lara-app",
     "license": "MIT",
     "authors": [
         {
