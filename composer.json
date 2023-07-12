@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^7.1|^7.3|^8.1",
         "chillerlan/php-qrcode": "^4.3.4",
         "illuminate/support": "~5.8.0|6.x|7.x|8.x|9.x|10.x",
         "nesbot/carbon": "^1.21|^2.0"
