@@ -22,7 +22,7 @@ Download the IOS/Android app for free and link your Laravel project, follow the 
 First, install the package via composer:
 
 ``` bash
-composer require veskodigital/laravel-laraapp
+composer require veskodigital/laraapp
 ```
 
 The package will automatically register itself.
