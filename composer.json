@@ -1,5 +1,5 @@
 {
-    "name": "woosignal/laravel-laraapp",
+    "name": "veskodigital/laravel-laraapp",
     "description": "LaraApp for Laravel, manage your Laravel project on the move. Available on IOS and Android.",
     "type": "library",
     "keywords": [
@@ -9,13 +9,13 @@
         "Laravel IOS app",
         "Laravel Android app"
     ],
-    "homepage": "https://github.com/woosignal/laravel-laraapp",
+    "homepage": "https://github.com/veskodigital/laravel-laraapp",
     "license": "MIT",
     "authors": [
         {
             "name": "Anthony Gordon",
             "email": "agordon@woosignal.com",
-            "homepage": "https://woosignal.com",
+            "homepage": "https://veskodigital.com",
             "role": "Developer"
         }
     ],
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WooSignal\\LaraApp\\": "src/"
+            "VeskoDigital\\LaraApp\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WooSignal\\LaraApp\\Test\\": "tests"
+            "VeskoDigital\\LaraApp\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WooSignal\\LaraApp\\LaraAppServiceProvider"
+                "VeskoDigital\\LaraApp\\LaraAppServiceProvider"
             ],
             "aliases": {
-                "LaraApp": "WooSignal\\LaraApp\\LaraApp"
+                "LaraApp": "VeskoDigital\\LaraApp\\LaraApp"
             }
         }
     }

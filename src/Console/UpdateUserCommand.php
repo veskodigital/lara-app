@@ -1,10 +1,10 @@
 <?php
 
-namespace WooSignal\LaraApp\Console;
+namespace VeskoDigital\LaraApp\Console;
 
 use Illuminate\Console\Command;
-use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
-use WooSignal\LaraApp\Models\LaUser;
+use VeskoDigital\LaraApp\Console\Traits\DetectsApplicationNamespace;
+use VeskoDigital\LaraApp\Models\LaUser;
 use Hash;
 
 class UpdateUserCommand extends Command

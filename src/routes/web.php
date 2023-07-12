@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use WooSignal\LaraApp\Http\Controllers\LaraAppController;
+use VeskoDigital\LaraApp\Http\Controllers\LaraAppController;
 
 /*
 |--------------------------------------------------------------------------

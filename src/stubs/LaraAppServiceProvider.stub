@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
-use WooSignal\LaraApp\LaraAppApplicationServiceProvider;
+use VeskoDigital\LaraApp\LaraAppApplicationServiceProvider;
 
 class LaraAppServiceProvider extends LaraAppApplicationServiceProvider
 {

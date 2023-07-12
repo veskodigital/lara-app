@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Models;
+namespace VeskoDigital\LaraApp\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +17,6 @@ class LaAppRequest extends Model
 
 	public function device()
 	{
-		return $this->belongsTo(\WooSignal\LaraApp\Models\LaUserDevice::class);
+		return $this->belongsTo(\VeskoDigital\LaraApp\Models\LaUserDevice::class);
 	}
 }

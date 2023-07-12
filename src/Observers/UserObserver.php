@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Observers;
+namespace VeskoDigital\LaraApp\Observers;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * Class UserObserver
  *
  * @property LaUserDeviceService $laUserDeviceService
- * @package WooSignal\LaraApp\Observers\UserObserver
+ * @package VeskoDigital\LaraApp\Observers\UserObserver
  */
 class UserObserver
 {
     public function __construct()
     {
-        $this->laUserDeviceService = resolve(\WooSignal\LaraApp\Http\Services\LaUserDeviceService::class);
+        $this->laUserDeviceService = resolve(\VeskoDigital\LaraApp\Http\Services\LaUserDeviceService::class);
     }
 
     public function created(Eloquent $model)

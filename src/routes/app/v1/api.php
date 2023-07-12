@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use WooSignal\LaraApp\Http\Controllers\LaraAPIController;
-use WooSignal\LaraApp\Http\Controllers\LaraAuthController;
+use VeskoDigital\LaraApp\Http\Controllers\LaraAPIController;
+use VeskoDigital\LaraApp\Http\Controllers\LaraAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ Route::group(
         'prefix' => 'api/app/v1',
         'middleware' => [
             'auth:sanctum', 
-            \WooSignal\LaraApp\Http\Middleware\APIAuthenticate::class
+            \VeskoDigital\LaraApp\Http\Middleware\APIAuthenticate::class
         ],
     ], function() {
         Route::post('set-env', [LaraAPIController::class, 'postSetEnv'])->name('info.set-env');

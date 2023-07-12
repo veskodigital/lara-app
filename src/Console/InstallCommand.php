@@ -1,12 +1,12 @@
 <?php
 
-namespace WooSignal\LaraApp\Console;
+namespace VeskoDigital\LaraApp\Console;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
+use VeskoDigital\LaraApp\Console\Traits\DetectsApplicationNamespace;
 use Illuminate\Support\Facades\Schema;
-use WooSignal\LaraApp\Models\LaUser;
+use VeskoDigital\LaraApp\Models\LaUser;
 use Hash;
 
 class InstallCommand extends Command
@@ -57,7 +57,7 @@ class InstallCommand extends Command
 
             if ($this->confirm('Would you also like to run the migration now too?')) {
                 $this->comment('Running LaraApp migration...');
-                $this->call('migrate', ['--path' => 'vendor/woosignal/laravel-laraapp/src/database/migrations']);
+                $this->call('migrate', ['--path' => 'vendor/veskodigital/laravel-laraapp/src/database/migrations']);
             }
         }
 

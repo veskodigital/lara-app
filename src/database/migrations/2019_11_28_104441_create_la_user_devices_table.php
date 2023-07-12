@@ -15,7 +15,7 @@ class CreateLaUserDevicesTable extends Migration
     {
         Schema::create('la_user_devices', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\WooSignal\LaraApp\Models\LaUser::class)->constrained();
+            $table->foreignIdFor(\VeskoDigital\LaraApp\Models\LaUser::class)->constrained();
             $table->text('uuid');
             $table->string('name');
             $table->string('display_name');

@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Models;
+namespace VeskoDigital\LaraApp\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,20 +18,20 @@ class LaUserDevice extends Model
 	/**
      * Returns User model for LaraApp
      *
-     * @return WooSignal\LaraApp\Models\LaUser | null
+     * @return VeskoDigital\LaraApp\Models\LaUser | null
      */
 	public function user()
 	{
-		return $this->belongsTo(\WooSignal\LaraApp\Models\LaUser::class);
+		return $this->belongsTo(\VeskoDigital\LaraApp\Models\LaUser::class);
 	}
 
 	/**
      * Returns app requests for a device.
      *
-     * @return WooSignal\LaraApp\Models\LaAppRequest | null
+     * @return VeskoDigital\LaraApp\Models\LaAppRequest | null
      */
 	public function appRequests()
 	{
-		return $this->hasMany(\WooSignal\LaraApp\Models\LaAppRequest::class);
+		return $this->hasMany(\VeskoDigital\LaraApp\Models\LaAppRequest::class);
 	}
 }

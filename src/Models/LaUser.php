@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Models;
+namespace VeskoDigital\LaraApp\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
@@ -20,7 +20,7 @@ class LaUser extends Model
 
 	public function devices()
 	{
-		return $this->hasMany(\WooSignal\LaraApp\Models\LaUserDevice::class);
+		return $this->hasMany(\VeskoDigital\LaraApp\Models\LaUserDevice::class);
 	}
 
 	public function apiToken()

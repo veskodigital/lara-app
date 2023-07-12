@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Console\Traits;
+namespace VeskoDigital\LaraApp\Console\Traits;
 
 use Illuminate\Container\Container;
 

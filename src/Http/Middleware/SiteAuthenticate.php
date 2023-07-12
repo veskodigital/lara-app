@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Middleware;
+namespace VeskoDigital\LaraApp\Http\Middleware;
 
 class SiteAuthenticate
 {

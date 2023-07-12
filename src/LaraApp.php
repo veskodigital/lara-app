@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp;
+namespace VeskoDigital\LaraApp;
 
 use Closure;
 

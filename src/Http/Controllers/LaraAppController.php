@@ -1,9 +1,9 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Controllers;
+namespace VeskoDigital\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Http\Middleware\Authenticate;
+use VeskoDigital\LaraApp\Http\Controllers\Controller;
+use VeskoDigital\LaraApp\Http\Middleware\Authenticate;
 use Illuminate\Http\Request;
 
 class LaraAppController extends Controller

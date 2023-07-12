@@ -1,9 +1,9 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Middleware;
+namespace VeskoDigital\LaraApp\Http\Middleware;
 
-use WooSignal\LaraApp\Models\LaUserDevice;
-use WooSignal\LaraApp\Models\LaAppRequest;
+use VeskoDigital\LaraApp\Models\LaUserDevice;
+use VeskoDigital\LaraApp\Models\LaAppRequest;
 
 class APIAuthenticate
 {

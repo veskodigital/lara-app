@@ -1,12 +1,12 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Controllers;
+namespace VeskoDigital\LaraApp\Http\Controllers;
 
 use Symfony\Component\Console\Exception\RuntimeException;
-use WooSignal\LaraApp\Http\Controllers\Controller;
+use VeskoDigital\LaraApp\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use WooSignal\LaraApp\Http\Requests\PushTokenRequest;
-use WooSignal\LaraApp\Http\Requests\PushNotificationsUpdateRequest;
+use VeskoDigital\LaraApp\Http\Requests\PushTokenRequest;
+use VeskoDigital\LaraApp\Http\Requests\PushNotificationsUpdateRequest;
 use Artisan;
 use File;
 use DB;

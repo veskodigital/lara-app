@@ -1,16 +1,16 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Controllers;
+namespace VeskoDigital\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Http\Requests\UserSnapRequest;
-use WooSignal\LaraApp\Http\Services\LaUserDeviceService;
+use VeskoDigital\LaraApp\Http\Controllers\Controller;
+use VeskoDigital\LaraApp\Http\Requests\UserSnapRequest;
+use VeskoDigital\LaraApp\Http\Services\LaUserDeviceService;
 
 /**
  * Class LaraAppSiteAPIController
  *
  * @property LaUserDeviceService $laUserDeviceService
- * @package WooSignal\LaraApp\Http\Controllers
+ * @package VeskoDigital\LaraApp\Http\Controllers
  */
 class LaraAppSiteAPIController extends Controller
 {

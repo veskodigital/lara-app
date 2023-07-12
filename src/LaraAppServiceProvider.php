@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp;
+namespace VeskoDigital\LaraApp;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +26,7 @@ class LaraAppServiceProvider extends ServiceProvider
         ], 'views');
 
         if (config('laraapp.observer.observer_created_user', false) == true) {
-            config('laraapp.user', \App\Models\User::class)::observe(new \WooSignal\LaraApp\Observers\UserObserver);
+            config('laraapp.user', \App\Models\User::class)::observe(new \VeskoDigital\LaraApp\Observers\UserObserver);
         }
     }
 

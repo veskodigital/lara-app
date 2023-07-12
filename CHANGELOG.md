@@ -1,5 +1,5 @@
 # Changelog
 
-## 1.0.0 - 2023-07-09
+## 4.0.0 - 2023-07-12
 
-- Initial release
+- Refactor project

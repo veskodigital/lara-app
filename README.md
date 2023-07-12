@@ -15,7 +15,7 @@ Our package enables you to manage your project on the go, some features include:
 
 [Android App](https://play.google.com/store/apps/details?id=com.mavsoft.laraapp)
 
-Download the IOS/Android app for free and link your Laravel project, follow the installtion below once you have the app.
+Download the IOS/Android app for free and link your Laravel project, follow the installation below once you have the app.
 
 ## Installation
 
@@ -49,11 +49,11 @@ Once you run the `php artisan laraapp:install` command, it will copy the config 
 
 ## Authorization
 
-If your Laravel site's enviroment is set to production, you'll need to add users who you want to be able to access the **/lara-app/link** route inside your LaraAppServiceProvider.php.
+If your Laravel site's environment is set to production, you'll need to add users who you want to be able to access the **/lara-app/link** route inside your LaraAppServiceProvider.php.
 
 `app/Providers/LaraAppServiceProvider.php`
 
-In this file you should see the following:
+In this file, you should see the following:
 ``` php
 protected function gate()
 {
@@ -68,7 +68,7 @@ protected function gate()
 
 ## Testing
 Try and access https://mysite.com/lara-app/link
-If you can access this then the setup is ready for the mobile app to connect too.
+If you can access this, then the setup is ready for the mobile app to connect too.
 
 If you can't access the route (seeing 404/403 error), try running the following.
 
@@ -76,15 +76,12 @@ If you can't access the route (seeing 404/403 error), try running the following.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed recently.
 
 ## Security
 
 If you discover any security related issues, please email hello@veskodigital.com instead of using the issue tracker.
 
-## Credits
-
-- [Anthony Gordon](https://twitter.com/anthonygordn)
 
 ## Support us
 

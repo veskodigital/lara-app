@@ -1,9 +1,9 @@
 <?php
 
-namespace WooSignal\LaraApp\Console;
+namespace VeskoDigital\LaraApp\Console;
 
 use Illuminate\Console\Command;
-use WooSignal\LaraApp\Console\Traits\DetectsApplicationNamespace;
+use VeskoDigital\LaraApp\Console\Traits\DetectsApplicationNamespace;
 use Illuminate\Support\Facades\Schema;
 
 class UninstallCommand extends Command
@@ -37,27 +37,7 @@ class UninstallCommand extends Command
 
         $this->info('Uninstalling LaraApp');
 
-        $this->call('migrate', ['--path' => 'vendor/woosignal/laravel-laraapp/src/database/migrations/uninstall']);
-
-        // $arrTablesToRemove = [];
-        // if (Schema::hasTable('la_app_requests')) {
-        //     $arrTablesToRemove[] = 'la_app_requests';
-        // }
-        // if (Schema::hasTable('la_user_devices')) {
-        //     $arrTablesToRemove[] = 'la_user_devices';
-        // }
-        // if (Schema::hasTable('la_users')) {
-        //     $arrTablesToRemove[] = 'la_users';
-        // }
-
-        // if (empty($arrTablesToRemove)) {
-        // 	return;
-        // }
-
-        // foreach ($arrTablesToRemove as $table) {
-        // 	$this->comment("Removing the '{$table}' table");
-        // 	Schema::dropIfExists($table);
-        // }
+        $this->call('migrate', ['--path' => 'vendor/veskodigital/laravel-laraapp/src/database/migrations/uninstall']);
 
         $this->comment('LaraApp is uninstalled');
     }

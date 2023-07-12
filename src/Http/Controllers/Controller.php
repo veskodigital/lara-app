@@ -1,6 +1,6 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Controllers;
+namespace VeskoDigital\LaraApp\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 

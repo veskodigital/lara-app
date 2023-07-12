@@ -1,15 +1,15 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Services;
+namespace VeskoDigital\LaraApp\Http\Services;
 
 use Illuminate\Support\Facades\Http;
-use WooSignal\LaraApp\Models\LaUserDevice;
+use VeskoDigital\LaraApp\Models\LaUserDevice;
 use Log;
 
 /**
  * Class LaUserDeviceService
  *
- * @package WooSignal\LaraApp\Http\Services\LaUserDeviceService
+ * @package VeskoDigital\LaraApp\Http\Services\LaUserDeviceService
  */
 class LaUserDeviceService
 {

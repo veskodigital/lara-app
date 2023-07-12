@@ -1,10 +1,10 @@
 <?php
 
-namespace WooSignal\LaraApp\Http\Controllers;
+namespace VeskoDigital\LaraApp\Http\Controllers;
 
-use WooSignal\LaraApp\Http\Controllers\Controller;
-use WooSignal\LaraApp\Http\Requests\LoginRequest;
-use WooSignal\LaraApp\Models\LaUser;
+use VeskoDigital\LaraApp\Http\Controllers\Controller;
+use VeskoDigital\LaraApp\Http\Requests\LoginRequest;
+use VeskoDigital\LaraApp\Models\LaUser;
 use Hash;
 
 class LaraAuthController extends Controller
