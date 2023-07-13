@@ -57,7 +57,7 @@ class InstallCommand extends Command
 
             if ($this->confirm('Would you also like to run the migration now too?')) {
                 $this->comment('Running LaraApp migration...');
-                $this->call('migrate', ['--path' => 'vendor/veskodigital/laravel-laraapp/src/database/migrations']);
+                $this->call('migrate', ['--path' => 'vendor/veskodigital/lara-app/src/database/migrations']);
             }
         }
 

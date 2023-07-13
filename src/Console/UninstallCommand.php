@@ -37,7 +37,7 @@ class UninstallCommand extends Command
 
         $this->info('Uninstalling LaraApp');
 
-        $this->call('migrate', ['--path' => 'vendor/veskodigital/laravel-laraapp/src/database/migrations/uninstall']);
+        $this->call('migrate', ['--path' => 'vendor/veskodigital/lara-app/src/database/migrations/uninstall']);
 
         $this->comment('LaraApp is uninstalled');
     }
