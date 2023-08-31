@@ -20,13 +20,11 @@ class LaraAPIController extends Controller
      */
     public function __construct()
     {
-      
+
     }
 
     /**
      * Post a command to artisan
-     *
-     * @return Response
      */
     public function postCommmand(Request $request)
     {
@@ -34,11 +32,10 @@ class LaraAPIController extends Controller
 
         try {
             $exitCode = Artisan::call($valCommand);
-            return response()->json(['result' => Artisan::output()]);   
+            return response()->json(['result' => Artisan::output()]);
         } catch (RuntimeException $e) {
             return response()->json(['result' => $e->getMessage()]);
         }
-        return response()->json(['result' => '']);
     }
 
     /**
@@ -69,7 +66,7 @@ class LaraAPIController extends Controller
      *
      * @return array
      */
-    public function getRoutes() 
+    public function getRoutes()
     {
         $app = app();
         $routes = $app->routes->getRoutes();
@@ -95,7 +92,7 @@ class LaraAPIController extends Controller
     public function getInfo()
     {
         $appName = config('laraapp.app_name', 'Laravel App');
-        
+
         $envVars = collect($_ENV)->map(function($item, $key) {
             $typeFound = gettype($item);
             if (in_array(strtolower($item), ['true', 'false'])) {
@@ -105,8 +102,8 @@ class LaraAPIController extends Controller
         })->values();
 
         return response()->json([
-            'name' => $appName, 
-            'environment' => \App::environment(), 
+            'name' => $appName,
+            'environment' => \App::environment(),
             'laravel_version' => \App::version(),
             'maintenance_mode' => \App::isDownForMaintenance(),
             'env' => $envVars,
@@ -129,9 +126,9 @@ class LaraAPIController extends Controller
 
         $tables = collect(DB::select('SHOW TABLES'))->map(function($table) {
                 $firstProp = current( (Array) $table );
-                
+
                 return [
-                    'name' => $firstProp, 
+                    'name' => $firstProp,
                     'records' => DB::table($firstProp)->count(),
                     'size' => ''
                 ];
@@ -152,7 +149,7 @@ class LaraAPIController extends Controller
 
         if ($tables->isEmpty()) {
             return response()->json(['status' => 200, 'data' => []]);
-        }    
+        }
 
         $columns = array_keys((array) $tables[0]);
 
@@ -208,7 +205,7 @@ class LaraAPIController extends Controller
         return $arrLogs;
     }
 
-    private function formatBytes($bytes) 
+    private function formatBytes($bytes)
     {
         if ($bytes > 0) {
             $i = floor(log($bytes) / log(1024));
@@ -222,7 +219,7 @@ class LaraAPIController extends Controller
     /**
      * Returns the contents for a given log file
      *
-     * @return String
+     * @return \Illuminate\Http\JsonResponse
      */
     public function showLogDetail($logFile)
     {
@@ -233,12 +230,12 @@ class LaraAPIController extends Controller
     /**
      * Stores the users push token
      *
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
      */
     public function storeToken(PushTokenRequest $request)
     {
         $userDevice = $request->input('udevice');
-        
+
         $valid = $request->validated();
         $pushToken = $valid['push_token'];
 
@@ -255,7 +252,7 @@ class LaraAPIController extends Controller
     /**
      * Updates the users push notification settings
      *
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
      */
     public function updateNotifications(PushNotificationsUpdateRequest $request)
     {
@@ -270,7 +267,7 @@ class LaraAPIController extends Controller
         $userDevice->update([
             'push_settings' => json_encode($pushSettings)
         ]);
-        
+
         return response()->json(['status' => 200, 'result' => $pushSettings]);
     }
 
@@ -302,7 +299,7 @@ class LaraAPIController extends Controller
     /**
      * Shows a devices current notification settings
      *
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
      */
     public function showNotifications(Request $request)
     {
@@ -324,7 +321,7 @@ class LaraAPIController extends Controller
         if (is_bool(env($key))) {
             $old = env($key) ? 'true' : 'false';
         }
-        
+
         if (filter_var($value, FILTER_VALIDATE_INT) == false) {
             $keyValue = "$key=\"{$value}\"";
             file_put_contents($path, str_replace(
@@ -350,7 +347,7 @@ class LaraAPIController extends Controller
         $key = $request->key;
         $value = $request->value;
         $this->setEnv($key, $value);
-        
+
         return response()->json([
             'status' => 200
         ]);

@@ -4,7 +4,6 @@ namespace VeskoDigital\LaraApp\Console;
 
 use Illuminate\Console\Command;
 use VeskoDigital\LaraApp\Console\Traits\DetectsApplicationNamespace;
-use Illuminate\Support\Facades\Schema;
 
 class UninstallCommand extends Command
 {

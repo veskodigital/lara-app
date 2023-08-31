@@ -18,7 +18,7 @@ class LaUserDevice extends Model
 	/**
      * Returns User model for LaraApp
      *
-     * @return VeskoDigital\LaraApp\Models\LaUser | null
+     * @return \VeskoDigital\LaraApp\Models\LaUser | null
      */
 	public function user()
 	{
@@ -28,7 +28,7 @@ class LaUserDevice extends Model
 	/**
      * Returns app requests for a device.
      *
-     * @return VeskoDigital\LaraApp\Models\LaAppRequest | null
+     * @return \VeskoDigital\LaraApp\Models\LaAppRequest | null
      */
 	public function appRequests()
 	{

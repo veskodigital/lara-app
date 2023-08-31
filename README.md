@@ -1,5 +1,7 @@
 # LaraApp for Laravel, a pocket friendly IOS & Android companion app.
 
+<img src="screenshots/screenshot.png">
+
 [Official LaraApp package](https://thelara.app)
 
 Link your smartphone to your Laravel project with LaraApp. 
